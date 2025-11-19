@@ -6,8 +6,8 @@ pipeline {
     }
 
 	environment {
-        NEXUS_USER = credentials('admin')
-        NEXUS_PASS = credentials('admin')
+        NEXUS_USER = credentials('nexus-username')
+        NEXUS_PASS = credentials('nexus-password')
     }
 
     stages {
