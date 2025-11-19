@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'maven:3.8.8-eclipse-temurin-11'
-			args '-v $WORKSPACE/settings.xml:/root/.m2/settings.xml'
         }
     }
 
@@ -21,7 +20,9 @@ pipeline {
 
 		 stage('Publish to Nexus') {
             steps {
-                sh "mvn -B deploy -DskipTests"
+                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
+                    sh 'mvn -s $MAVEN_SETTINGS -B deploy -DskipTests'
+                }
             }
         }
     }
