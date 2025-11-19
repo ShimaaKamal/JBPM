@@ -20,8 +20,8 @@ pipeline {
 
 		 stage('Publish to Nexus') {
             steps {
-                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                    sh 'mvn -s $MAVEN_SETTINGS -B deploy -DskipTests'
+                configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
+                   sh "mvn -s \"$MAVEN_SETTINGS\" -B deploy -DskipTests"
                 }
             }
         }
