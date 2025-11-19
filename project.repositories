@@ -1,0 +1,28 @@
+<project-repositories>
+  <repositories>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>nexus</id>
+        <url>http://192.168.1.26:8081/repository/maven-public/</url>
+        <source>SETTINGS</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>local</id>
+        <url>/opt/jboss/.m2/repository</url>
+        <source>LOCAL</source>
+      </metadata>
+    </repository>
+    <repository>
+      <include>true</include>
+      <metadata>
+        <id>deployment</id>
+        <url>http://192.168.1.26:8081/repository/maven-snapshots/</url>
+        <source>DISTRIBUTION_MANAGEMENT</source>
+      </metadata>
+    </repository>
+  </repositories>
+</project-repositories>
