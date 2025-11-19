@@ -15,6 +15,8 @@ pipeline {
             steps {
                 sh 'mvn -version'
 				sh 'mvn clean install'
+				sh  'echo "Inside Docker container:"'
+                sh  'echo "NEXUS_USER=$NEXUS_USER"'
             }
         }
 
